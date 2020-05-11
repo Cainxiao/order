@@ -3,23 +3,21 @@ package com.xiao.order.enums;
 import lombok.Getter;
 
 /**
- * 商品上下架状态
  * @author XYW
- * @create 2020-05-09 14:16
+ * @create 2020-05-11 11:11
  */
 @Getter
-public enum OrderSatusEnum {
+public enum  ResultEnum {
 
-    NEW(0, "新订单"),
-    FINISHED(1, "完结"),
-    CANCEL(2,"取消")
+    PARAM_ERROR(1,"参数错误"),
+    CART_EMPTY(2,"购物车为空")
     ;
 
     private Integer code;
 
     private String message;
 
-    OrderSatusEnum(Integer code, String message) {
+    ResultEnum(Integer code, String message) {
         this.code = code;
         this.message = message;
     }

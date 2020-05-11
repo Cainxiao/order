@@ -1,22 +1,21 @@
-package com.xiao.order.dataobject;
+package com.xiao.order.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.xiao.order.dataobject.OrderDetail;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.util.List;
 
 /**
  * @author XYW
- * @create 2020-05-09 16:03
+ * @create 2020-05-11 10:22
  */
 @Data
-@Entity
-public class OrderMaster {
+public class OrderDTO {
 
-    @Id
+    /**
+     * 订单id
+     */
     private String orderId;
 
     /**
@@ -54,10 +53,6 @@ public class OrderMaster {
      */
     private Integer payStatus;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date createTime;
-
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date updateTime;
+    private List<OrderDetail> orderDetailList;
 
 }
